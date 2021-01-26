@@ -38,7 +38,8 @@ module.exports = {
     },
     proxy:{
       '/admin/': {
-        target: 'http://localhost:3000/',
+        // target: 'http://localhost:80/',
+        target: 'http://47.112.226.104/',
         changeOrigin: true,
         // pathRewrite: { '^/server': '' },
       },

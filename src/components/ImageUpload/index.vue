@@ -55,7 +55,8 @@
       handleAvatarSuccess(res, file) {
         this.imageUrl = URL.createObjectURL(file.raw);
         if(res.code == 200){
-          this.$emit('update:imageUrl', 'http://localhost:3000' + '/admin/file/image?id=' + res.data.fileid);
+          // this.$emit('update:imageUrl', 'http://localhost:3000' + '/admin/file/image?id=' + res.data.fileid);
+          this.$emit('update:imageUrl', res.data.url);
         }
       },
       beforeAvatarUpload(file) {
