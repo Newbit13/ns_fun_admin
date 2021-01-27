@@ -28,7 +28,7 @@
         </el-col>
       </el-row>
     </div>
-
+    <el-tag>http://47.112.226.104/wechat/redirect?id={游戏id}</el-tag>
     <el-table
       :key="tableKey"
       v-loading="listLoading"
@@ -39,11 +39,11 @@
       style="width: 100%;"
       @sort-change="sortChange"
     >
-      <!-- <el-table-column label="ID" prop="id" sortable="custom" align="center" width="80" :class-name="getSortClass('id')">
+      <el-table-column label="ID" prop="id" sortable="custom" align="center" width="220" :class-name="getSortClass('id')">
         <template slot-scope="{row}">
-          <span>{{ row.id }}</span>
+          <span>{{ row._id }}</span>
         </template>
-      </el-table-column> -->
+      </el-table-column>
       <el-table-column label="名字">
         <template slot-scope="{row}">
           <span class="link-type" @click="handleUpdate(row)">{{ row.name }}</span>
@@ -111,8 +111,11 @@
         <el-form-item label="价格" prop="price">
           <el-input v-model="temp.price" />
         </el-form-item>
-        <el-form-item label="链接" prop="link">
+        <el-form-item label="文章链接" prop="link">
           <el-input v-model="temp.link" />
+        </el-form-item>
+        <el-form-item label="百度云链接" prop="baiduyunlink">
+          <el-input v-model="temp.baiduyunlink" />
         </el-form-item>
         <el-form-item label="logo">
           <ImageUpload :imageUrl.sync="temp.logo"/>
