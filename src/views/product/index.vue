@@ -93,7 +93,7 @@
 
     <pagination v-show="total>0" :total="total" :page.sync="listQuery.page" :limit.sync="listQuery.limit" @pagination="getList" />
 
-    <el-dialog :title="textMap[dialogStatus]" :visible.sync="dialogFormVisible">
+    <el-dialog :title="textMap[dialogStatus]" :visible="dialogFormVisible">
       <el-form ref="dataForm" :rules="rules" :model="temp" label-position="left" label-width="80px" style="width: 400px; margin-left:50px;">
         <el-form-item label="状态" prop="status">
           <el-select v-model="temp.status" class="filter-item" placeholder="Please select">
@@ -116,6 +116,9 @@
         </el-form-item>
         <el-form-item label="百度云链接" prop="baiduyunlink">
           <el-input v-model="temp.baiduyunlink" />
+        </el-form-item>
+        <el-form-item label="提取码" prop="code">
+          <el-input v-model="temp.code" />
         </el-form-item>
         <el-form-item label="logo">
           <ImageUpload :imageUrl.sync="temp.logo"/>
