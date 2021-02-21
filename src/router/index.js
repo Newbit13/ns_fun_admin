@@ -43,32 +43,32 @@ export const constantRoutes = [
     hidden: true
   },
 
+  // {
+  //   path: '/',
+  //   component: Layout,
+  //   redirect: '/dashboard',
+  //   children: [{
+  //     path: 'dashboard',
+  //     name: 'Dashboard',
+  //     component: () => import('@/views/dashboard/index'),
+  //     meta: { title: '首页', icon: 'dashboard' }
+  //   }]
+  // },
+  // {
+  //   path: '/user',
+  //   component: Layout,
+  //   redirect: '/user',
+  //   children: [{
+  //     path: 'user',
+  //     name: 'Table',
+  //     component: () => import('@/views/user/index'),
+  //     meta: { title: '用户资料', icon: 'form' }
+  //   }]
+  // },
   {
     path: '/',
     component: Layout,
-    redirect: '/dashboard',
-    children: [{
-      path: 'dashboard',
-      name: 'Dashboard',
-      component: () => import('@/views/dashboard/index'),
-      meta: { title: '首页', icon: 'dashboard' }
-    }]
-  },
-  {
-    path: '/user',
-    component: Layout,
-    redirect: '/user',
-    children: [{
-      path: 'user',
-      name: 'Table',
-      component: () => import('@/views/user/index'),
-      meta: { title: '用户资料', icon: 'form' }
-    }]
-  },
-  {
-    path: '/product',
-    component: Layout,
-    redirect: '/product',
+    redirect: '/productlist',
     name: 'product',
     meta: {
       title: '产品',
@@ -79,6 +79,11 @@ export const constantRoutes = [
       name: 'productlist',
       component: () => import('@/views/product/index'),
       meta: { title: '产品列表', icon: 'supermarket' }
+    },{
+      path: 'updatelist',
+      name: 'updatelist',
+      component: () => import('@/views/product/updateList'),
+      meta: { title: '更新列表', icon: 'star' }
     }]
   },
   // {
